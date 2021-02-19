@@ -690,7 +690,7 @@ router.get('/nulis', async (req, res, next) => {
 	 if(!text) return res.json(loghandler.nottext)
 		Nulis(text)
 		 .then(hasil => {
-			fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=28dd175b555860ab2b5cdfedf125fe38&image=${hasil}&name=${randomTextNumber}`))
+			fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=28dd175b555860ab2b5cdfedf125fe38&image=${hasil.images[0]}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
